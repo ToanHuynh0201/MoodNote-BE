@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
+import routes from './routes';
 
 const app = express();
 
@@ -24,6 +25,9 @@ app.get('/health', (_req: Request, res: Response) => {
     timestamp: new Date().toISOString()
   });
 });
+
+// API routes
+app.use('/api', routes);
 
 // 404 handler
 app.use((_req: Request, res: Response) => {

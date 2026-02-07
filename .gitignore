@@ -36,3 +36,6 @@ coverage/
 
 # Documents
 docs
+
+/src/generated/prisma
+.claude
